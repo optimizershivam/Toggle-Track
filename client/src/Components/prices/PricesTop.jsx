@@ -12,7 +12,7 @@ import {
   import { BsCheckLg,BsGoogle,BsApple } from "react-icons/bs";
   
 const PricesTop = () => {
-  return <Box>
+  return <Box >
        <Text
         fontSize={{ base: "26.4px", md: "30px", lg: "56px" }}
         mt={{ base: 5 }}

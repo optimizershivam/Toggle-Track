@@ -18,6 +18,7 @@ import Trial from "./Trial";
 const Prices = () => {
   return (
     <Box
+    bg="#2c1338"
       color={"#FCE5D8"}
       fontFamily={"sans-serif"}
       w={{ base: "100%", md: "100%", lg: "100%" }}

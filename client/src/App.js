@@ -4,7 +4,7 @@ import Prices from "./Components/prices/Prices"
 function App() {
   return (
     <div className="App">
-      
+      <Prices/>
     </div>
   );
 }
