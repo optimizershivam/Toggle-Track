@@ -1,0 +1,49 @@
+.sign {
+      grid-area:sign ;
+   
+  }
+  .timer {
+    grid-area: timer;
+  }
+  .title{
+    grid-area: title;
+    color:#fff3ed;
+    font-size:66.93px;
+    font-family: "GT Haptik Medium", sans-serif;
+    text-align: justify;
+    line-height: 73px;
+    font-weight:500;
+   
+
+  }
+  .tophome {
+    display: grid;
+   background-color:#892bb8;
+  
+   justify-content: center;
+   
+   max-width: max-content;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas:
+      "title title"
+      "sign timer"
+  }
+
+  @media only screen and (max-width: 650px) {
+    .tophome {
+      display: grid;
+   max-height: 600px;
+  
+      grid-template-rows: 1fr 2fr;
+      grid-template-areas:
+        "title"
+        "sign"
+        "timer"
+    }
+    .title{
+      height: max-content;
+    }
+    .timer{
+      width:200px;
+    }
+  }

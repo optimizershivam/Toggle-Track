@@ -1,0 +1,29 @@
+.logobtn1{
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    background-color: violet;
+    box-shadow: none;
+   border-radius: 26px;
+   font-family: "GT Haptik Medium", sans-serif;
+   line-height: 18.4px;
+   text-align: center;
+   font-size: 16px;
+   letter-spacing: normal;
+   height:40px;
+   max-width:250px ;
+   color: white;
+   font-weight: bold;
+   padding:10px;
+   margin-left:30%;
+
+   
+}
+.logobtn1:hover{
+background: #564260;
+}
+.companylogo_main_div{
+    background-color: #2c1338;
+ 
+    
+}

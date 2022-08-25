@@ -1,0 +1,519 @@
+/* second div style start from here */
+.fixtop{
+    width: 100%;
+}
+.main_div_secondhomepage{
+    display: flex;
+    width: 100%;
+gap:30px;
+background-color:rgb(255, 243, 237);
+justify-content: center;
+
+
+}
+
+.btnsecondHome{
+    color:white;
+    font-weight:bold;
+
+    background-color: rgb(231, 124, 216);
+    border-radius: 50px;
+    height: 60px;
+    width: 180px;
+margin-right:240px;
+margin-top: 20px;
+}
+
+.btnsecondHome:hover{
+   background-color: rgb(97, 92, 92);
+}
+.second_divhome{
+    background-color:rgb(250, 229, 247);
+    width: 500px;
+    padding: 15px;
+}
+.second_divhome2{
+    background-color:rgb(252, 229, 216);
+    width: 500px;
+}
+
+.imgsechomepage1{
+    margin-left: 100px;
+}
+.imgsechomepage2{
+    margin-left: 100px;
+}
+.p1_h_para{
+    color: rgb(229, 124, 216);
+    margin-top: 30px;
+    margin-right: 200px;
+    font-weight: bold;
+}
+.h1_h_heading{
+    
+    color: #412A4C;
+    font-family: 'GT Haptik Medium',sans-serif;
+    font-weight: bold;
+    font-size: large;
+    margin-left: 50px;
+    text-align: justify;
+    margin-top: 20px;
+   
+}
+.top_div_sec_homepage{
+    display: inline-block;
+    word-break: break-word;
+    background-color:rgb(255, 243, 237);
+    height: 300px;
+    color: rgb(32, 29, 29);
+    font-family: "GT Haptik Medium", sans-serif;;
+    font-size: xxx-large;
+ padding-top: 90px;
+ margin: auto;
+ align-items: center;
+
+}
+.sechome_last_para{
+    text-decoration: underline;
+}
+.sechome_last_para:hover{
+    color: violet;
+    cursor: pointer;
+}
+
+/* second div biling and invoicing end here */
+/*................. small div of homepage css  start .........................*/
+
+.small_div_homepage{
+    display: flex;
+  background-color: rgb(255, 243, 237);
+   padding-top: 30px;
+    gap:20px;
+    justify-content: center;
+
+   
+}
+.small_div_homepage  div{
+   padding:10px;
+   margin-bottom: 30px;
+    
+   
+}
+.small_div1_hp{
+    background-color:rgb(252, 229, 216);
+    height: 340px;
+    width: 340px;
+    padding:10px;
+}
+.small_div2_hp{
+    background-color:rgb(255, 235, 189);
+    height: 340px;
+    width: 340px;
+    padding:10px;
+}
+.small_div3_hp{
+    background-color:rgb(250, 229, 247);
+    height: 340px;
+    width: 340px;
+    padding:10px;
+}
+.head_text_small_div{
+    font-weight: bold;
+    margin-bottom: 40px;
+    font-size: larger;
+    font-family: 'GT Haptik Medium',sans-serif;
+    margin-top: 30px;
+    text-align: justify; 
+    padding:20px;
+    line-height: 1.35;
+}
+.sp1_h_para{
+    color: rgb(229, 124, 216);
+    margin-top: 30px;
+    margin-right: 80px;
+    font-weight: bold;
+}
+.small_div_learnmore{
+    display: flex;
+  text-align: justify;
+  margin-left: 20px;
+  width: 150px;
+}
+.small_div_learnmore:hover{
+  color: rgb(229, 124, 216) ;
+  cursor: pointer;
+  align-items: center;
+ 
+  }
+/*................. small div of homepage css................................... */
+/* small div percent */
+.small_div_percent{
+    background-color: rgb(44, 19, 56);
+        display:flex;
+    justify-content: center;
+    gap: 50px;
+    padding-top: 200px;
+   
+}
+.small_div_percent div{
+    background-color: rgb(255, 243, 237);
+    height: 220px;
+    width: 330px;
+    gap:"20px";
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+.small_div_percent>div:nth-child(1){
+    margin-top: -150px;
+    padding: 10px;
+}
+.small_div_percent>div:nth-child(2){
+    margin-top: -100px;
+    padding: 10px;
+}
+.small_div_percent>div:nth-child(3){
+    margin-top: -50px;
+    padding: 10px;
+}
+.pp{
+    margin-top:20px ;
+   
+    font-weight: bold;
+    color: rgb(236, 126, 236);
+}
+
+.pp:hover{
+    color: rgb(223, 24, 223);
+    cursor: pointer;
+}
+/* media query start */
+@media all and (min-width:50px) and (max-width:400px)
+{
+   
+.main_div_secondhomepage{
+   
+display: flex;
+flex-direction: column;
+
+padding: 10% 10% 10% 10%;
+
+
+
+} 
+.second_divhome{
+    
+    width:100%;
+    padding: 10%;
+}
+.second_divhome2{
+    padding: 10%;
+    width:100%;
+}
+
+.imgsechomepage1{
+    margin-left: 10%;
+    width:100%;
+}
+.imgsechomepage2{
+    margin-left: 10%;
+    width:100%;
+}
+.p1_h_para{
+ 
+    margin-top: 10%;
+    margin-right: 20%;
+    font-weight: bold;
+    padding: 10%;
+}
+.h1_h_heading{
+    
+    color: #412A4C;
+    font-family: 'GT Haptik Medium',sans-serif;
+    font-weight: bold;
+    font-size: medium;
+    margin-left:5%;
+    text-align: justify;
+    margin-top:5%;
+   
+}
+.top_div_sec_homepage{
+    display: inline-block;
+    word-break: break-word;
+    background-color:rgb(255, 243, 237);
+    height: 200px;
+    width: 100%;
+    color: rgb(32, 29, 29);
+    font-family: "GT Haptik Medium", sans-serif;;
+    font-size:medium;
+ padding-top: 10%;
+padding-left: 20%;
+ align-items: center;
+
+}
+.sechome_last_para{
+    font-size: small;
+margin-left: 5px;
+    margin-bottom:10px ;
+    padding: 10px;
+}
+.btnsecondHome{
+    height: 40px;
+    width: 150px;
+margin-right:240px;
+margin-top: 20px;
+}
+/* second div biling and invoicing end here */
+/*................. small div of homepage css  start .........................*/
+
+.small_div_homepage{
+    display: flex;
+    flex-direction: column;
+
+margin: auto;
+align-items: center;
+  
+    justify-content: center;
+
+   
+}
+.small_div_homepage  div{
+  width: 90%;
+   margin-bottom: 5%;
+   height: max-content;
+    
+   
+}
+.small_div1_hp{
+   
+    height:70%;
+    width:100%;
+    padding:5%;
+}
+.small_div2_hp{
+    background-color:rgb(255, 235, 189);
+    height: 300px;
+    width: 100%;
+    padding:10%;
+}
+.small_div3_hp{
+    background-color:rgb(250, 229, 247);
+    height: 300px;
+    width:100%;
+    padding:10px;
+}
+.head_text_small_div{
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: small;
+    font-family: 'GT Haptik Medium',sans-serif;
+    margin-top: 10px;
+    text-align: justify; 
+    padding:20% ;
+  
+}
+.sp1_h_para{
+ 
+    margin-top: 20px;
+    margin-right: 80px;
+    font-weight: bold;
+}
+.small_div_learnmore{
+    display: flex;
+  text-align: justify;
+  margin-left: 20px;
+  width:100%;
+}
+.small_div_percent{
+
+        display:flex;
+        flex-direction: column;
+    justify-content: center;
+ margin: auto;
+ height:300px;
+ margin-top: 30%;
+    padding-top:10%;
+   
+}
+.small_div_percent div{
+    width: 90%;
+    margin: auto;
+  padding: 10%;
+    align-items: center;
+    padding: 20%;
+    margin-bottom: 10%;
+}
+
+.small_div_percent>div:nth-child(3){
+    
+    padding: 10px;
+}
+.imgpercentup{
+    max-width: 100%;
+}
+}
+@media all and (min-width: 400px) and (max-width: 780px){
+ .fixtop{
+    overflow: hidden;
+ }
+    .main_div_secondhomepage{
+   
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 10% 10% 10% 10%;
+     
+        
+        
+        
+        } 
+        .second_divhome{
+            margin: auto;
+            width:90%;
+            padding: 10%;
+        }
+        .second_divhome2{
+            margin: auto;
+            padding: 10%;
+            width:90%;
+        }
+        
+        .imgsechomepage1{
+            margin-left: 10%;
+            width:100%;
+        }
+        .imgsechomepage2{
+            margin-left: 10%;
+            width:100%;
+        }
+        .p1_h_para{
+         
+            margin-top: 10%;
+            margin-right: 20%;
+            font-weight: bold;
+            padding: 10%;
+        }
+        .h1_h_heading{
+            
+            color: #412A4C;
+            font-family: 'GT Haptik Medium',sans-serif;
+            font-weight: bold;
+            font-size: medium;
+            margin-left:5%;
+            text-align: justify;
+            margin-top:5%;
+           
+        }
+        .top_div_sec_homepage{
+            display: inline-block;
+            word-break: break-word;
+            background-color:rgb(255, 243, 237);
+            height: 200px;
+            width: 100%;
+            color: rgb(32, 29, 29);
+            font-family: "GT Haptik Medium", sans-serif;;
+            font-size:medium;
+         padding-top: 10%;
+        padding-left: 20%;
+         align-items: center;
+        
+        }
+        .sechome_last_para{
+            font-size: small;
+        margin-left: 5px;
+            margin-bottom:10px ;
+            padding: 10px;
+        }
+        .btnsecondHome{
+            height: 40px;
+            width: 150px;
+        margin-right:240px;
+        margin-top: 20px;
+        }
+        /* second div biling and invoicing end here */
+        /*................. small div of homepage css  start .........................*/
+        
+        .small_div_homepage{
+            display: flex;
+            flex-direction: column;
+    
+        
+          
+            justify-content: center;
+        
+           
+        }
+        .small_div_homepage  div{
+          width: 90%;
+          margin: auto;
+           margin-bottom: 5%;
+           height: max-content;
+            
+           
+        }
+        .small_div1_hp{
+           
+            height:80%;
+            width:90%;
+            padding:5%;
+        }
+        .small_div2_hp{
+            background-color:rgb(255, 235, 189);
+            height: 300px;
+            width: 100%;
+            padding:10%;
+        }
+        .small_div3_hp{
+            background-color:rgb(250, 229, 247);
+            height: 300px;
+            width:100%;
+            padding:10px;
+        }
+        .head_text_small_div{
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-size: small;
+            font-family: 'GT Haptik Medium',sans-serif;
+            margin-top: 10px;
+            text-align: justify; 
+            padding:20% ;
+          
+        }
+        .sp1_h_para{
+         
+            margin-top: 20px;
+            margin-right: 80px;
+            font-weight: bold;
+        }
+        .small_div_learnmore{
+            display: flex;
+          text-align: justify;
+          margin-left: 20px;
+          width:100%;
+        }
+        .small_div_percent{
+            background-color: rgb(44, 19, 56);
+                display:flex;
+                flex-direction: column;
+            justify-content: center;
+         
+            padding-top:40%;
+           
+        }
+        .small_div_percent div{
+            display: block;
+            height: 260px;
+            width: 90%;
+            margin: auto;
+      
+            align-items: center;
+            padding-top: 20%;
+            margin-bottom: 10%;
+        }
+        
+ 
+        .imgpercentup{
+            max-width: 100%;
+        }
+}
+    
