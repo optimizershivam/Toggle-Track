@@ -1,16 +1,12 @@
 import {
   Box,
-  Button,
-  Divider,
-  Flex,
-  Stack,
-  Text,
-  Image,
-  Input,
+  
 } from "@chakra-ui/react";
 import React from "react";
+import Apps from "./Apps";
 
 import Faqs from "./Faqs";
+import PlanComparison from "./PlanComparison";
 import PriceSignup from "./PriceSignup";
 
 import PricesTop from "./PricesTop";
@@ -30,6 +26,8 @@ const Prices = () => {
       <Faqs />
 
       <PriceSignup />
+      <PlanComparison/>
+      <Apps/>
     </Box>
   );
 };
