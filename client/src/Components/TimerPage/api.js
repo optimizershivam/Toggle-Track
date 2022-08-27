@@ -1,8 +1,14 @@
 import axios from 'axios'
 export const postdata = (send) => {
   console.log(send)
+  var token=localStorage.getItem("token")
+  console.log(token)
   axios
-    .post("https://damp-reef-46945.herokuapp.com/timer/create", send)
+    .post("https://damp-reef-46945.herokuapp.com/timer/create", send,{
+      headers:{
+        "authorization":token
+      }
+    })
     .then((res) => console.log(" data done"));
 };
 
@@ -23,8 +29,14 @@ export function msToTime(duration) {
  }
 
  export const deletedata = (id) => {
+  var token=localStorage.getItem("token")
+  console.log(token)
+  console.log(id)
   axios
-    .delete(`https://damp-reef-46945.herokuapp.com/timer/delete/${id}`)
+    .delete(`https://damp-reef-46945.herokuapp.com/timer/delete/${id}`,{
+      headers:{
+        "authorization":token
+      }})
     .then((res) => console.log("done"));
 };
 // /timer/delete

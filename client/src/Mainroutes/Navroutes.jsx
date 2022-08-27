@@ -11,8 +11,12 @@ import ToggleBook from '../Components/prices/ToggleBook'
 import YourInfo from '../Components/prices/YourInfo'
 import Login from '../Components/Loging/Login'
 import Signupm from "../Components/Loging/Signupm"
-import Sidebarroutes from '../Timerroutes/Sidebarroutes'
-// import { Stack } from '@chakra-ui/react'
+
+import { Stack } from '@chakra-ui/react'
+import Sidebar from "../Components/sidebar/Sidebar"
+import TopNav from '../Components/TimerPage/TopNav'
+import Project from '../Components/NavComponents/Project/Project'
+import Client from '../Components/NavComponents/Client/Client'
 // import TopNav from '../../Components/TimerPage/TopNav'
 const Navroutes = () => {
   return (
@@ -28,9 +32,24 @@ const Navroutes = () => {
          <Route path="/Prices" element={<Prices/>} />
          <Route path="/login" element={<Login/>} />
          <Route path='/signup' element={<Signupm/>}/>
-         <Route path="/timer" element={<Sidebarroutes/>} />
-      
+         {/* <Route path="/timers" element={<Sidebarroutes/>} /> */}
+           <Route path="/timer" element={
+            <Stack direction="column" gap="20px">
+            <Sidebar/>
+            <TopNav  />
+           </Stack>}/>
+           <Route path="/project" element={
+            <Stack direction="row" gap="13%">
+            <Sidebar/>  
+            <Project/>
+           </Stack>} />
+           <Route path="/client" element={
+            <Stack direction="row" gap="13%" >
+            <Sidebar/>  
+            <Client/>
+           </Stack>} />
       </Routes>
+      
   {/* <Footer/> */}
 
     </div>

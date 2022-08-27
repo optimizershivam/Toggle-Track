@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import style from './client.module.css';
+import axios from "axios"
 import { useDisclosure } from '@chakra-ui/react'
 import {
     Modal,
@@ -27,27 +28,62 @@ import {
     MenuDivider,
   } from '@chakra-ui/react'
   import { Select,Stack,FormControl,FormLabel,Input,Button } from '@chakra-ui/react'
+  import { AiFillDelete } from 'react-icons/ai';
+
 
 const Client = () => {
+  const token=localStorage.getItem("token")
     const { isOpen, onOpen, onClose } = useDisclosure()
     const initialRef = React.useRef(null)
   const finalRef = React.useRef(null)
 
   const [client,setClient] = useState("");
 
-  let data = [{client:"ABCD"},{client:"WXYZ"}]
-
+  const[data,setData]= useState([])
+   
+// if("please login again"==="please login again")
+// {
+//       return
+// }
+// else{
+//   setLogin(true)
+// }
 
   const handleSubmit = () => {
     const payload = {
-      
-      client
+      id:Date.now(),
+      title:client
     }
-    
-    console.log(payload)
-    onClose()
+    axios.post(`https://damp-reef-46945.herokuapp.com/tasks/`,payload,{headers:{
+      "authorization":token
+    }})
+    .then((res)=>console.log("client created"))
 
   }
+  const getdata = () => {
+    axios.get("https://damp-reef-46945.herokuapp.com/tasks/all",{
+     headers:{
+       "authorization":token
+     }
+    }).then((res) => setData(res.data));
+   
+  };
+  
+  useEffect(()=>{
+    getdata()
+  },[handleSubmit])
+  const deletedata=(id)=>{
+    axios
+    .delete(`https://damp-reef-46945.herokuapp.com/tasks/delete/${id}`,{
+      headers:{
+        "authorization":token
+      }})
+    .then((res) => console.log("delete done"));
+  }
+  
+
+
+
   return (
     <div className={style.container}>
 
@@ -91,8 +127,8 @@ const Client = () => {
         </div>
 
         <div className={style.client}>
-            {
-                data.map((item) => (
+            { data.length>0&&
+                data?.map((item) => (
                     <div>
                         
                         <Menu >
@@ -108,11 +144,13 @@ const Client = () => {
                                 fontSize="14px"
                                 fontWeight="500"
                             >
-                                {item.client} <DragHandleIcon />
-                            </MenuButton>
+                                {item.title} <DragHandleIcon />
+                                </MenuButton>
                             <MenuList>
                                 <MenuItem>Edit</MenuItem>
-                                <MenuItem color={"red"}>Delete</MenuItem>
+                                <MenuItem color={"red"} onClick={()=>{
+                                    deletedata(item.id) 
+                                    getdata()}}>Delete</MenuItem>
                                 
                             </MenuList>
                             </Menu>

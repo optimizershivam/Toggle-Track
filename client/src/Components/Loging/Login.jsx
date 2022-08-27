@@ -23,6 +23,8 @@ import { useNavigate } from 'react-router-dom';
 import { FaApple, FaGoogle, FaTwitter } from 'react-icons/fa';
 // import { useNavigate } from 'react-router-dom';
 import { Link as Linkrouter } from 'react-router-dom';
+import Footer from '../Homepage/Footer';
+import Navbar from '../NavComponents/Navbar';
 // import{UseNavigate}from"react-router-dom";
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
@@ -46,14 +48,15 @@ export default function Login() {
             method : "POST",
             body : JSON.stringify(payload),
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                
               },
         })
         .then((res) => res.json())
         .then((res) => {
           console.log(res)
-            // localStorage.setItem("token", res.token)
-            // navigate("/timer")
+            localStorage.setItem("token", res.token)
+            navigate("/timer")
           
         })
         
@@ -62,7 +65,8 @@ export default function Login() {
     
   return (
 
-
+<>
+<Navbar/>
 <Box w={"full"}>
   <Box backgroundImage="url('https://public-assets.toggl.com/b/static/a848ad9070fcf959a459fa1e878d2abb/c0583/hero-laptops.jpg')"
   backgroundPosition="center"
@@ -184,6 +188,7 @@ export default function Login() {
 
 
 </Box>
-   
+<Footer/>
+</>
   );
 }
