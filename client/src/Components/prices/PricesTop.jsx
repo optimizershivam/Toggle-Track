@@ -6,16 +6,15 @@ import {
   Flex,
   Stack,
   Text,
-  Image,
-  Input,
 } from "@chakra-ui/react";
-import { BsCheckLg, BsGoogle, BsApple } from "react-icons/bs";
+import { BsCheckLg} from "react-icons/bs";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const PricesTop = () => {
   const [annual1, setAnnual1] = useState("$9");
   const [annual2, setAnnual2] = useState("$18");
-
+const navigate =useNavigate()
   const handleAnnual = () => {
     setAnnual1("$9");
     setAnnual2("$18");
@@ -219,6 +218,7 @@ const PricesTop = () => {
             mt={{ base: "30px", md: "40px", lg: "70px" }}
             mb={{ base: "20px", md: "20px", lg: "" }}
             _hover={{ bg: "#412A4C", border: "1px solid white" }}
+            onClick={()=>navigate("")}
           >
             Get started
           </Button>
@@ -351,6 +351,7 @@ const PricesTop = () => {
             mb={{ base: "20px", md: "20px", lg: "" }}
             _hover={{ bg: "#412A4C", border: "1px solid white" }}
             mt={{ base: "30px", md: "40px", lg: "120px" }}
+            onClick={()=>navigate("")}
           >
             Get started
           </Button>
@@ -500,6 +501,7 @@ const PricesTop = () => {
             mb={{ base: "20px", md: "20px", lg: "" }}
             _hover={{ bg: "#412A4C", border: "1px solid white" }}
             color="white"
+            onClick={()=>navigate("")}
           >
             Get started
           </Button>
@@ -613,8 +615,9 @@ const PricesTop = () => {
             mt={{ base: "30px", md: "40px", lg: "230px" }}
             mb={{ base: "20px", md: "20px", lg: "" }}
             _hover={{ bg: "#412A4C", border: "1px solid white" }}
+            onClick={()=>navigate("/BookDemo")}
           >
-            Get started
+            Book a demo
           </Button>
         </Box>
       </Stack>

@@ -1,9 +1,20 @@
 import { Box, Text, Image, Input, Button, FormLabel } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const ToggleBook = () => {
+
   const navigate=useNavigate()
+  const [change,setChange]=useState("")
+
+  const handleChange=()=>{
+    if(change){
+      navigate("/ChooseToggleTime")
+    }
+    else{
+      alert("Email Required")
+    }
+  }
   return (
     <Box bg="#f5f8fa" w="100%">
       <Image
@@ -30,9 +41,9 @@ const ToggleBook = () => {
           </Text>
           <Box w={{lg:"40%",md:"60%",base:"80%"}} m="auto" mt="20px">
             <FormLabel fontWeight={"normal"}>Enter Email Address*</FormLabel>
-            <Input type="email" borderColor={"black"} />
+            <Input type="email" borderColor={"black"} value={change} onChange={(e)=>setChange(e.target.value)}/>
           </Box>
-          <Button bg="#ff7a59" color={"white"} mt="50px"  onClick={()=> navigate("/ChooseToggleTime")}>Start booking</Button>
+          <Button bg="#ff7a59" color={"white"} mt="50px"  onClick={handleChange}>Start booking</Button>
         </Box>
       </Box>
     </Box>
