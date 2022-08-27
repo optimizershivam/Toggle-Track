@@ -1,126 +1,147 @@
-import React, { useState } from "react";
-import Signstyle from "./Sign.module.css";
-import { useNavigate } from "react-router-dom";
+import {
+  Flex,
+  Box,
+  FormControl,
+  FormLabel,
+  Input,
+  InputGroup,
+  HStack,
+  InputRightElement,
+  Stack,
+  Button,
+  Heading,
+  Text,
+  useColorModeValue,
+  Link,
+} from '@chakra-ui/react';
+import { BsApple, BsGoogle } from "react-icons/bs";
+import { useState } from 'react';
+import { ChevronRightIcon, LockIcon, ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
+import { useNavigate } from 'react-router-dom';
+import { FaApple, FaGoogle, FaTwitter } from 'react-icons/fa';
 
-const Signup1 = () => {
-  const navigate = useNavigate();
+export default function signup1() {
+  const [showPassword, setShowPassword] = useState(false);
+  const [email,setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  
+ const nav =useNavigate()
+  const handleEmailChange = (e) => {
+      setEmail(e.target.value)
+  }
+  const handlePasswordChange = (e) => {
+      setPassword(e.target.value)
+  }
 
-  const [inpval, setInpval] = useState({
-    email: "",
-    password: "",
-  });
+  const handleSubmit = async () => {
+      const payload = {
+          email,
+          password
+      }
+       await fetch("https://damp-reef-46945.herokuapp.com/auth/register"
+       , {
+          method : "POST",
+          body : JSON.stringify(payload),
+          headers: {
+              'Content-Type': 'application/json'
+            },
+      })
+      if(email.length!=0 && password.length!=0)
+      {
+          alert("register successfully")
+         nav("/login")
+      }
+      if(email.length==0 && password.length==0)
+      {
+          alert("please sigup")
+          
+      }
+     
+  }
 
-  const [data, setData] = useState([]);
-
-  const getdata = (e) => {
-    const { value, name } = e.target;
-    setInpval(() => {
-      return {
-        ...inpval,
-        [name]: value,
-      };
-    });
-  };
-
-  const addData = (e) => {
-    e.preventDefault();
-    const { email, password } = inpval;
-    if (email === "") {
-      alert("email field is required");
-    } else if (!email.includes("@")) {
-      alert("please enter valid email address");
-    } else if (password === "") {
-      alert("password field is required");
-    } else {
-      alert("signup succesfully");
-      localStorage.setItem("useryoutube", JSON.stringify([...data, inpval]));
-      navigate("/login");
-    }
-  };
   return (
-    <div style={{ textAlign: "center" }}>
-      <div className={Signstyle.signupheading}>
-        <img src="https://i.postimg.cc/QxzkyhCG/toggle-icon.png" alt="" />
-        <h1 className={Signstyle.heads1top}>
-          Sign up for a <i style={{ color: "rgb(229, 124, 216)" }}>free</i>{" "}
-          Toggl Track account
-        </h1>
-        <p className={Signstyle.paras1top}>
-          All plans come with a free, 30-day trial of Toggl Track Premium—no
-          credit card required.
-          <br />
-          Upgrade at the end of the trial or continue using Track for free
-          forever.
-          <br />
-          Already have an account? Log in here.
-        </p>
-      </div>
-      <div className={Signstyle.flexdiv}>
-        <div className={Signstyle.main}>
-          <div className={Signstyle.top}>
-            <button type="submit" className={Signstyle.google}>
-              {" "}
-              <img
-                className={Signstyle.googleimg}
-                src="https://img.icons8.com/color/452/google-logo.png"
-                alt="google"
-              />
-              Signup via Google
-            </button>
-            <button className={Signstyle.google}>
-              {" "}
-              <img
-                className={Signstyle.googleimg}
-                src="https://cdn.iconscout.com/icon/free/png-256/apple-853-675472.png"
-                alt="apple"
-              />{" "}
-              Sign up via Apple
-            </button>
-          </div>
-          <br />
-          <br />
-          <h3 className={Signstyle.h3inline}>OR</h3>
-          <br />
-          <form onSubmit={addData}>
-            <div className={Signstyle.forms}>
-              <label>Email </label>
-              <br />
-              <input
-                type="text"
-                name="email"
-                onChange={getdata}
-                placeholder="Email"
-              />{" "}
-              <br />
-              <label>Password</label>
-              <br />
-              <input
-                type="password"
-                name="password"
-                onChange={getdata}
-                placeholder="Password"
-              />
-            </div>
 
-            <br />
-            <div>
-              <button type="submit" className={Signstyle.btn2log}>
-                sign up via email
-              </button>
-              <p className={Signstyle.textundersubmit}>
-                By signing up, you agree to our terms of service, privacy policy
-                and to receiving marketing communication from Toggl Track. You
-                can opt out anytime.
-              </p>
-            </div>
-          </form>
-        </div>
-        <div>
-          <img src="https://i.postimg.cc/MZryZZDX/signtext.png" alt="" />
-        </div>
-      </div>
-    </div>
+
+
+
+
+    <Box bg={"rgb(44, 19, 56)"} color={"white"}  margin={"auto"} >
+     
+
+   
+   
+      <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
+      <HStack margin={"auto"}>
+  <Button background={"white"} color={"black"} borderRadius={"16px"} leftIcon={<FaGoogle />}>
+    Login with Google
+  </Button>
+  <Button background={"white"} color={"black"} borderRadius={"16px"}  leftIcon={<FaApple />}>
+    Login with Apple
+  </Button>
+</HStack>
+     
+        <Box
+          rounded={'lg'}
+          bg={useColorModeValue('rgb(44, 19, 56)', 'gray.700')}
+         
+      
+          p={8}>
+          <Stack spacing={4} >
+            
+            <FormControl border='5px' id="email" >
+<FormLabel>Email</FormLabel>
+              <Input width={"100%"} type="email" placeholder="email" value={email} onChange={handleEmailChange} />
+            </FormControl>
+            <FormControl id="password" >
+            <FormLabel>Password</FormLabel>
+              <InputGroup>
+              
+                <Input  type={showPassword ? 'text' : 'password'} placeholder="password" value={password} onChange={handlePasswordChange}/>
+                <InputRightElement h={'full'}>
+                  <Button 
+                    variant={'ghost'}
+                    onClick={() =>
+                      setShowPassword((showPassword) => !showPassword)
+                    }>
+                    {showPassword ? <ViewIcon /> : <ViewOffIcon />}
+                  </Button>
+                </InputRightElement>
+              </InputGroup>
+            </FormControl>
+
+          
+            <HStack spacing={4} pt={2}>
+           
+              <Button onClick={handleSubmit}
+                loadingText="Submitting"
+                borderRadius={"16px"}
+                size="lg"
+               width={"100%"}
+               marginRight={"6%"}
+                bg={'rgb(229, 124, 216)'}
+                color={'white'}
+                
+                _hover={{
+                  bg: 'rgb(86, 66, 96)',
+                }}>
+                Sign up
+              </Button>
+            
+            
+              
+              
+            </HStack>
+            <Stack pt={6}>
+              <Text align={'center'} fontSize={"10px"}>
+              By signing up, you agree to our terms of service, privacy policy and to receiving marketing communication from Toggl Track. You can opt out anytime.
+              </Text>
+            </Stack>
+          </Stack>
+        </Box>
+      </Stack>
+     
+   
+   </Box>
+   
   );
-};
-
-export default Signup1;
+}

@@ -17,7 +17,7 @@ const Homepage = () => {
        <CompanyLogo/>
       <Video/>
       <FooterSignup /> 
-      <Footer/>
+      
   
   </div>
     

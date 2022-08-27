@@ -37,7 +37,8 @@ export default function SignupCard() {
           email,
           password
       }
-       await fetch("http://localhost:8080/auth/signup", {
+       await fetch("https://damp-reef-46945.herokuapp.com/auth/register"
+       , {
           method : "POST",
           body : JSON.stringify(payload),
           headers: {
