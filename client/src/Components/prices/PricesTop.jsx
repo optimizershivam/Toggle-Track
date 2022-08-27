@@ -1,35 +1,33 @@
 import React from "react";
 import {
-    Box,
-    Button,
-    Divider,
-    Flex,
-    Stack,
-    Text,
-    Image,
-    Input,
-  } from "@chakra-ui/react";
-  import { BsCheckLg,BsGoogle,BsApple } from "react-icons/bs";
+  Box,
+  Button,
+  Divider,
+  Flex,
+  Stack,
+  Text,
+  Image,
+  Input,
+} from "@chakra-ui/react";
+import { BsCheckLg, BsGoogle, BsApple } from "react-icons/bs";
 import { useState } from "react";
-  
+
 const PricesTop = () => {
+  const [annual1, setAnnual1] = useState("$9");
+  const [annual2, setAnnual2] = useState("$18");
 
-  const [annual1,setAnnual1]=useState("$9")
-  const [annual2,setAnnual2]=useState("$18")
-  
+  const handleAnnual = () => {
+    setAnnual1("$9");
+    setAnnual2("$18");
+  };
 
-  const handleAnnual=()=>{
-    setAnnual1("$9")
-    setAnnual2("$18")
-  }
-
-  const handleMonthly=()=>{
-    setAnnual1("$10")
-    setAnnual2("$20")
-  }
-  return <Box >
-
-       <Text
+  const handleMonthly = () => {
+    setAnnual1("$10");
+    setAnnual2("$20");
+  };
+  return (
+    <Box>
+      <Text
         fontSize={{ base: "26.4px", md: "30px", lg: "56px" }}
         mt={{ base: 5 }}
         pt={{ base: "24px", md: "27px", lg: "24px" }}
@@ -80,7 +78,6 @@ const PricesTop = () => {
         </Button>
       </Flex>
 
-      
       <Stack
         direction={{ base: "column", md: "column", lg: "row" }}
         w={{ base: "", md: "", lg: "80%" }}
@@ -90,10 +87,9 @@ const PricesTop = () => {
         gap={{ lg: "15px", base: "15px", md: "15px" }}
         mt={"70px"}
       >
-        
         <Box
           w={{ base: "90%", md: "", lg: "24%" }}
-          m={{ base: "auto" ,md:"auto"}}
+          m={{ base: "auto", md: "auto" }}
           border="1px solid white"
           bg="#412A4C"
         >
@@ -230,10 +226,9 @@ const PricesTop = () => {
         {/* **** */}
         <Box
           w={{ base: "90%", md: "", lg: "24%" }}
-          m={{ base: "auto" ,md:"auto"}}
+          m={{ base: "auto", md: "auto" }}
           ml={{ base: "300px", md: "", lg: "" }}
           border="1px solid white"
-         
           bg="#412A4C"
         >
           <Text
@@ -274,8 +269,7 @@ const PricesTop = () => {
               fontSize={{ base: "48px", md: "48px", lg: "48px" }}
               color="#E57CD8"
             >
-          {annual1}
-              
+              {annual1}
             </Text>
             <Text fontSize={{ base: "", md: "", lg: "12px" }} mt="25px">
               per user per month
@@ -516,8 +510,7 @@ const PricesTop = () => {
           w={{ base: "90%", md: "90%", lg: "24%" }}
           border="1px solid white"
           bg="#412A4C"
-          m={{ base: "auto",md:"auto" }}
-          
+          m={{ base: "auto", md: "auto" }}
         >
           <Text
             fontSize={{ base: "19.2px", md: "19.2px", lg: "24px" }}
@@ -625,8 +618,8 @@ const PricesTop = () => {
           </Button>
         </Box>
       </Stack>
-      
-  </Box>;
+    </Box>
+  );
 };
 
 export default PricesTop;
