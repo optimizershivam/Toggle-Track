@@ -8,15 +8,43 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 import { BsCheckLg } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 
 const YourInfo = () => {
+  const [firstName,setFirstName]=useState("")
+  const [lastName,setLastName]=useState("")
+  const [email,setEmail]=useState("")
   const navigate=useNavigate()
   let date=  localStorage.getItem("date")
  
    let time= localStorage.getItem("time")
+
+   
+const handleUserInfo=()=>{
+
+  if(firstName && lastName && email){
+
+    const payload={
+      firstName,
+      lastName,
+      email
+    }
+    localStorage.setItem("userInfo",JSON.stringify(payload))
+    console.log(JSON.parse(localStorage.getItem("userInfo")))
+             navigate("/BookingConfirm")
+  }
+  else{
+
+    alert("all fields are required")
+  }
+
+
+
+ 
+}
+
   return (
     <Box bg="#f5f8fa" w="100%" h={{md:"1200px"}}>
       <Flex w="300px" pt="50px" m="auto">
@@ -56,19 +84,19 @@ const YourInfo = () => {
         <Stack direction={{lg:"row",md:"column",base:"column"}} mt="20px">
           <Box >
             <FormLabel>First Name*</FormLabel>
-            <Input type="text" w={{lg:"400px"}} borderColor={"black"} />
+            <Input type="text" w={{lg:"400px"}} borderColor={"black"} value={firstName} onChange={(e)=>setFirstName(e.target.value)}/>
           </Box>
           <Box >
             <FormLabel>Last Name*</FormLabel>
-            <Input type="text" borderColor={"black"}  w={{lg:"400px"}} />
+            <Input type="text" borderColor={"black"}  w={{lg:"400px"}} value={lastName} onChange={(e)=>setLastName(e.target.value)}/>
           </Box>
         </Stack>
         <Box mt="20px">
           <FormLabel> Your Email Address*</FormLabel>
-          <Input type="email" borderColor={"black"} w={{lg:"810px",md:""}} ml={{lg:"-30px"}}/>
+          <Input type="email" borderColor={"black"} w={{lg:"810px",md:""}} ml={{lg:"-30px"}} value={email} onChange={(e)=>setEmail(e.target.value)}/>
         </Box>
        
-        <Button mt="30px" ml={{lg:"630px"}} w="150px" bg="#ff7a59" color="white" onClick={()=> navigate("/BookingConfirm")} >Confirm</Button>
+        <Button mt="30px" ml={{lg:"630px"}} w="150px" bg="#ff7a59" color="white" onClick={handleUserInfo} >Confirm</Button>
       </Box>
      
     </Box>
