@@ -1,5 +1,7 @@
 .container{
     /* border: 1px solid red; */
+    width:80%;
+    margin-left: 16%;
     background-color: #FEF9F7;
 }
 .first{

@@ -3,6 +3,8 @@ import {
   
 } from "@chakra-ui/react";
 import React from "react";
+import Footer from "../Homepage/Footer";
+import Navbar from "../NavComponents/Navbar";
 import Apps from "./Apps";
 
 import Faqs from "./Faqs";
@@ -13,7 +15,10 @@ import PricesTop from "./PricesTop";
 import Trial from "./Trial";
 const Prices = () => {
   return (
+    <>
+    <Navbar/>
     <Box
+    mt="-50px"
     bg="#2c1338"
       color={"#FCE5D8"}
       fontFamily={"sans-serif"}
@@ -29,6 +34,8 @@ const Prices = () => {
       <PlanComparison/>
       <Apps/>
     </Box>
+    <Footer/>
+    </>
   );
 };
 

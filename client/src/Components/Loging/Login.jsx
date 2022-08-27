@@ -19,13 +19,14 @@ import {
 import { BsApple, BsGoogle } from "react-icons/bs";
 import { useState } from 'react';
 import { ChevronRightIcon, LockIcon, ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
-// import { useNavigate } from 'react-router-dom';
-import { FaApple, FaGoogle, FaTwitter } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
+import { FaApple, FaGoogle, FaTwitter } from 'react-icons/fa';
+// import { useNavigate } from 'react-router-dom';
 import { Link as Linkrouter } from 'react-router-dom';
+// import{UseNavigate}from"react-router-dom";
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
-
+ const navigate=useNavigate()
   const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
@@ -51,8 +52,11 @@ export default function Login() {
         .then((res) => res.json())
         .then((res) => {
           console.log(res)
-            localStorage.setItem("token", res.token)
+            // localStorage.setItem("token", res.token)
+            // navigate("/timer")
+          
         })
+        
         .catch((err) => console.log(err))
     }
     
@@ -124,7 +128,7 @@ export default function Login() {
                }}>Forgot password?</Link></Stack>
          
            <HStack spacing={4} pt={2}>
-          
+            
              <Button onClick={handleSubmit}
                loadingText="Submitting"
                borderRadius={"16px"}
@@ -133,7 +137,7 @@ export default function Login() {
               marginRight={"6%"}
                bg={'rgb(229, 124, 216)'}
                color={'white'}
-               
+              
                _hover={{
                  bg: 'rgb(86, 66, 96)',
                }}>

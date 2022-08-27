@@ -49,6 +49,7 @@ const navigate =useNavigate()
         Choose your billing:
       </Text>
       <Flex
+
         color={"black"}
         ml={{ base: "80px", md: "280px", lg: "620px" }}
         mt={{ base: "20px", md: "30px", lg: "20px" }}
@@ -218,7 +219,7 @@ const navigate =useNavigate()
             mt={{ base: "30px", md: "40px", lg: "70px" }}
             mb={{ base: "20px", md: "20px", lg: "" }}
             _hover={{ bg: "#412A4C", border: "1px solid white" }}
-            onClick={()=>navigate("")}
+            onClick={()=>navigate("/timer")}
           >
             Get started
           </Button>
@@ -351,7 +352,7 @@ const navigate =useNavigate()
             mb={{ base: "20px", md: "20px", lg: "" }}
             _hover={{ bg: "#412A4C", border: "1px solid white" }}
             mt={{ base: "30px", md: "40px", lg: "120px" }}
-            onClick={()=>navigate("")}
+            onClick={()=>navigate("/timer")}
           >
             Get started
           </Button>
@@ -501,7 +502,7 @@ const navigate =useNavigate()
             mb={{ base: "20px", md: "20px", lg: "" }}
             _hover={{ bg: "#412A4C", border: "1px solid white" }}
             color="white"
-            onClick={()=>navigate("")}
+            onClick={()=>navigate("/timer")}
           >
             Get started
           </Button>

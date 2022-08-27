@@ -1,8 +1,9 @@
 import axios from 'axios'
 export const postdata = (send) => {
+  console.log(send)
   axios
-    .post("", send)
-    .then((res) => console.log("done"));
+    .post("https://damp-reef-46945.herokuapp.com/timer/create", send)
+    .then((res) => console.log(" data done"));
 };
 
 
@@ -23,7 +24,7 @@ export function msToTime(duration) {
 
  export const deletedata = (id) => {
   axios
-    .delete(`http://localhost:8080/mind/${id}`)
+    .delete(`https://damp-reef-46945.herokuapp.com/timer/delete/${id}`)
     .then((res) => console.log("done"));
 };
-
+// /timer/delete

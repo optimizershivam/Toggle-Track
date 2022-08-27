@@ -195,6 +195,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
 
 
       <>
+      <RouterLink to="/client">
       <Flex
         align="center"
         p="1"
@@ -222,6 +223,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
         )}
       <Text color="white" fontSize="13px">Client</Text>
       </Flex>
+      </RouterLink>
       </>
      <>
      <Flex

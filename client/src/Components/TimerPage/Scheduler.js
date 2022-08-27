@@ -14,7 +14,7 @@ import { deletedata } from './api';
     },[])  
   return (
     <div style={{ marginLeft: "15%" }}>
-    {data.map((e)=>{
+    {data.length>0 && data.map((e)=>{
       return (
         <Flex
         key={e.id}

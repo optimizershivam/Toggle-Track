@@ -1,6 +1,8 @@
 .container{
     /* border: 1px solid red; */
+    width: 80%;
     background-color: #FEF9F7;
+    margin-left: 16%;
 }
 .top1{
     /* border: 1px solid grey; */
