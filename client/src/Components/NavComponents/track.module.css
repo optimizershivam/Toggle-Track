@@ -1,0 +1,41 @@
+.track_main2{
+    display: flex;
+    background-color: rgb(252, 229, 216);
+  margin-right: 100px;
+}
+.track_sub1{
+    display: flex;
+}
+.track_sub2{
+    display: flex;
+}
+.track_img1{
+    margin-left: 30px;
+    margin-right: 20px;
+    margin-top: 20px;
+
+}
+.track_h1{
+    color: #412a4c;
+    text-align: start;
+    font-size: 20px;
+
+}
+.track_h2{
+    color: #817187;
+    /* margin-top: -20px; */
+    text-align: start;
+    font-size: 15px;
+
+}
+.track_p{
+    font-weight:700;
+    margin-left: 40px;
+    color:#817187 ;
+    font-size: 15px;
+    text-align: start;
+}
+.track_main{
+    margin-top: 40px;
+
+}
