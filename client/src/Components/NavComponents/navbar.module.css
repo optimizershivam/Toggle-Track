@@ -1,0 +1,99 @@
+.navbar_main {
+    margin: auto;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    padding-top: 30px;
+    position: sticky;
+    top: 0;
+    
+  }
+  /* .navbarlogo {
+    width: 170px;
+  } */
+  .navbar_sub2 {
+    color: white;
+    /* text-align: center; */
+    /* font-weight: 50px; */
+    /* margin: auto; */
+  
+    display: flex;
+  }
+  .nabvbar_sub1 {
+    color: violet;
+    margin-top: -30px;
+    display: flex;
+  }
+  .nabvbar_sub1 > h2 {
+    margin-left: 10px;
+    margin-top: 28px;
+  }
+  .navbar_free {
+    margin-top: -10px;
+    width: 110px;
+    /* margin-top:20px; */
+    border-radius: 30px;
+    height: 40px;
+    /* padding: 1px 15px 1px 12px; */
+  }
+  .navbar_product {
+    margin-left: 20px;
+  }
+  .navbar_price {
+    margin-left: 20px;
+  }
+  .navbar_track {
+    margin-left: 20px;
+  }
+  
+  .navbar_careers {
+    margin-left: 20px;
+  }
+  .navbar_book {
+    margin-right: 30 px;
+    margin-left: 20px;
+  }
+  .navbar_log {
+    color: white;
+    margin-right: 10px;
+  }
+  .navbar_main2 {
+    margin-left: 300px;
+    display: flex;
+    gap: 10px;
+    color: white;
+    margin-top: 15px;
+    margin-right: 20px;
+    width: 400px;
+    font-weight: 600;
+  }
+  .navbar_hr {
+    /* height: 30px;
+      margin-top: -5px;
+      margin-right: 20px;
+      margin-left: 10px; */
+    width: 2px;
+    background-color: white;
+    height: 20px;
+    margin: 10px;
+    margin-top: 0px;
+  }
+  .button1 {
+    position: fixed;
+  }
+  
+  .navbar_track {
+    /* background-color: rgb(92, 6, 65); */
+    margin: auto;
+    margin-left: -180px;
+    text-align: start;
+  }
+  .navbar_careers {
+    margin-left: -250px;
+  }
+  .navbarlogo {
+    height: 60px;
+    padding: 5px;
+    opacity: 1.4;
+  }
+  
