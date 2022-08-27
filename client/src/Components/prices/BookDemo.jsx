@@ -9,10 +9,12 @@ import {
   Button,
   FormControl,
   FormLabel,
+ 
 } from "@chakra-ui/react";
 import { BsCheckLg } from "react-icons/bs";
-
+import { Link as RouterLink, useNavigate  } from "react-router-dom";
 const BookDemo = () => {
+  const navigate=useNavigate()
   return (
     <Box bg="#2c1338">
       <Stack
@@ -152,8 +154,11 @@ const BookDemo = () => {
             </FormControl>
           </Box>
 
-          <Button mt="30px" bg="#e57cd8" color={"white"} w="200px" p="20px">
-            Submit
+          <Button mt="30px" bg="#e57cd8" color={"white"} w="200px" p="20px" onClick={()=> navigate("/ToggleBook")}>
+           
+      
+            submit
+            
           </Button>
         </Box>
       </Stack>

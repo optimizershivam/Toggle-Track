@@ -10,8 +10,10 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { BsCheckLg } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 const YourInfo = () => {
+  const navigate=useNavigate()
   let date=  localStorage.getItem("date")
  
    let time= localStorage.getItem("time")
@@ -66,7 +68,7 @@ const YourInfo = () => {
           <Input type="email" borderColor={"black"} w={{lg:"810px",md:""}} ml={{lg:"-30px"}}/>
         </Box>
        
-        <Button mt="30px" ml={{lg:"630px"}} w="150px" bg="#ff7a59" color="white">Confirm</Button>
+        <Button mt="30px" ml={{lg:"630px"}} w="150px" bg="#ff7a59" color="white" onClick={()=> navigate("/BookingConfirm")} >Confirm</Button>
       </Box>
      
     </Box>

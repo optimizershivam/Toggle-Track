@@ -1,7 +1,9 @@
 import { Box, Text, Image, Input, Button, FormLabel } from "@chakra-ui/react";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const ToggleBook = () => {
+  const navigate=useNavigate()
   return (
     <Box bg="#f5f8fa" w="100%">
       <Image
@@ -30,7 +32,7 @@ const ToggleBook = () => {
             <FormLabel fontWeight={"normal"}>Enter Email Address*</FormLabel>
             <Input type="email" borderColor={"black"} />
           </Box>
-          <Button bg="#ff7a59" color={"white"} mt="50px">Start booking</Button>
+          <Button bg="#ff7a59" color={"white"} mt="50px"  onClick={()=> navigate("/ChooseToggleTime")}>Start booking</Button>
         </Box>
       </Box>
     </Box>

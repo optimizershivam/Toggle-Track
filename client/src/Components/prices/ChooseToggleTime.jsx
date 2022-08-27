@@ -2,10 +2,11 @@ import { Box, Text, Image, Stack, Button, Divider, Flex } from "@chakra-ui/react
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { useNavigate } from "react-router-dom";
 import TimePicker from 'react-time-picker'
 
 const ChooseToggleTime = () => {
-
+  const navigate=useNavigate()
   const [startDate, setStartDate] = useState(new Date());
   const [value, setValue] = useState('10:00');
 
@@ -74,7 +75,7 @@ const ChooseToggleTime = () => {
                 value={value}
             />
        </Box>
-       <Button w={{lg:"250px",md:"250px",base:"170px" }} mt="50px">Next</Button>
+       <Button w={{lg:"250px",md:"250px",base:"170px" }} mt="50px" onClick={()=> navigate("/YourInfo")}>Next</Button>
         </Box>
       </Stack>
 
