@@ -17,13 +17,13 @@ import { deletedata, msToTime, postdata } from './api';
 // import { Text } from '@chakra-ui/react';
 
 const TopNav = () => {
-
+    const token=localStorage.getItem("token")
     const [watch, setWatch] = useState(0);
     const [text, setText] = useState("");
     const[send,setSend]=useState({})
-      let [data, setData] = useState([]);
+    const [data, setData] = useState([]);
     const id = useRef(null);
-
+     console.log(data)
     console.log(text);
     const start = () => {
       if (!id.current) {
@@ -34,7 +34,12 @@ const TopNav = () => {
     };
 
      let getdata = () => {
-       axios.get("http://localhost:8080/mind").then((res) => setData(res.data));
+       axios.get("https://damp-reef-46945.herokuapp.com/timer",{
+        headers:{
+          "authorization":token
+        }
+       }).then((res) => setData(res.data));
+      
      };
 
     const stop = () => {
@@ -51,14 +56,18 @@ const TopNav = () => {
     let project=true
   let [timer ,setTimer ]= useState(false)
   return (
-    <>
+    <Box>
       <Flex
+        
         position="sticky"
         h="90px"
         ml="15%"
+        
+        mr="10px"
         boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px;"
-        p="10px 2px 10px 10px"
+        p="10px 8px 10px 20px"
       >
+
         <Center w="20%">
           <Input placeholder="What have you done ?" border="none" value={text} onChange={(e)=>setText(e.target.value)} />
         </Center>
@@ -140,7 +149,7 @@ const TopNav = () => {
       </Flex>
       <SubNav />
       <Scheduler getdata={getdata} data={data}/>
-    </>
+    </Box>
   );
 }
 

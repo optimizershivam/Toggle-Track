@@ -2,7 +2,7 @@ import { Flex,Text,Box,Center } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { formatAMPM } from './Time'
 import { BsFillTagFill, BsCurrencyDollar, BsFolderFill } from "react-icons/bs";
-import { AiFillPlayCircle } from "react-icons/ai";
+import { AiFillDelete, AiFillPlayCircle } from "react-icons/ai";
 import { deletedata } from './api';
 
 
@@ -14,7 +14,7 @@ import { deletedata } from './api';
     },[])  
   return (
     <div style={{ marginLeft: "15%" }}>
-    {data.map((e)=>{
+    {data.length>0 && data?.map((e)=>{
       return (
         <Flex
         key={e.id}
@@ -53,7 +53,7 @@ import { deletedata } from './api';
               <AiFillPlayCircle />
             </Center>
             <Center>
-              <AiFillPlayCircle  onClick={()=>{
+              <AiFillDelete  onClick={()=>{
                 deletedata(e.id) 
                 getdata()}}/>
             </Center>

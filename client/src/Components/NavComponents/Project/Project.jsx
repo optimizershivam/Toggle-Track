@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import style from './project.module.css';
-import { Select,Stack,FormControl,FormLabel,Input,Button } from '@chakra-ui/react'
+import { Select,Stack,FormControl,FormLabel,Input,Button, Center } from '@chakra-ui/react'
 import { IoIosPerson,IoLogoUsd,IoIosPeople,IoMdListBox,IoMdSwitch,IoMdArrowDropdown} from "react-icons/io";
 import { FaFirstOrderAlt } from "react-icons/fa";
 import {
@@ -14,9 +14,14 @@ import {
     Switch
   } from '@chakra-ui/react'
   import { useDisclosure } from '@chakra-ui/react'
+// import { postdata } from '../../TimerPage/api';
+import axios from "axios"
+import { AiFillDelete } from 'react-icons/ai';
 
 
 const Project = () => {
+  var token=localStorage.getItem("token")
+  console.log(token)
     const { isOpen, onOpen, onClose } = useDisclosure()
 
     const initialRef = React.useRef(null)
@@ -25,19 +30,46 @@ const Project = () => {
   const [name, setName] = useState("");
   const [client,setClient] = useState("");
 
-  let data = [{name:"Testing",client: "masai",time:"10 Hrs",status:"false",team:"pratik"},{name:"Testing",client: "masai",time:"10 Hrs",status:"false",team:"pratik"}];
-
-
+  //let data = [{name:"Testing",client: "masai",time:"10 Hrs",status:"false",team:"pratik"},{name:"Testing",client: "masai",time:"10 Hrs",status:"false",team:"pratik"}];
+ 
+  const[data,setData]=useState([])
+  const getdata = () => {
+    axios.get("https://damp-reef-46945.herokuapp.com/project",{
+     headers:{
+       "authorization":token
+     }
+    }).then((res) => setData(res.data));
+   
+  };
   const handleSubmit = () => {
     const payload = {
-      name,
-      client
+      id:Date.now(),
+      name:name,
+      client:client,
     }
-    data.push(payload)
-    console.log(data)
-    onClose()
+    
+  axios
+    .post("https://damp-reef-46945.herokuapp.com/project/create", payload,{
+      headers:{
+        "authorization":token
+      }
+    })
+    .then((res) => console.log(" data done"));
+    
 
   }
+  useEffect(()=>{
+    getdata()
+  },[handleSubmit])
+  const deletedata=(id)=>{
+    axios
+    .delete(`https://damp-reef-46945.herokuapp.com/project/delete/${id}`,{
+      headers:{
+        "authorization":token
+      }})
+    .then((res) => console.log("delete done"));
+  }
+  
   
 
   return (
@@ -124,14 +156,20 @@ const Project = () => {
 
         </div>
         <div >
-          {
-            data.map((item) => (
+          { data.length>0 &&
+            data?.map((item) => (
               <div className={style.map}>
-                <div style={{display:"flex",gap:"5px"}}> <FaFirstOrderAlt style={{marginTop:"4px"}}  /> {item.name}  </div>
+                <div style={{display:"flex",gap:"5px"}} key={item.id} > <FaFirstOrderAlt style={{marginTop:"4px",marginLeft:"-20%"}}  /> {item.name}  </div>
                 <div>{item.client}</div>
-                <div>{item.time}</div>
-                <div>{item.status}</div>
-                <div style={{fontWeight:"bold"}}>{item.team}</div>
+                <div>00h</div>
+                <div> 0 </div>
+                <div> {item.name} </div>
+                <Center>
+              <AiFillDelete  onClick={()=>{
+                deletedata(item.id) 
+                getdata()}}/>
+            </Center>
+
               </div>
             ))
           }

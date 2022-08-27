@@ -11,10 +11,10 @@ import {
   Box,
 } from "@chakra-ui/react";
 import Career from "./Career";
-import { Link } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 
 //importing Pratik res
-import { Nav,NavLink,Bars,NavMenu,NavBtn,NavBtnLink } from '../components/responsive Nav/navElements'
+import { Nav,NavLink,Bars,NavMenu,NavBtn,NavBtnLink } from '../NavComponents/responsive Nav/navElements'
 import { useDisclosure } from '@chakra-ui/react'
 import {
   Drawer,
@@ -37,7 +37,7 @@ const Navbar = () => {
   const [placement, setPlacement] = React.useState('right')
   return (
     <>
-    <Nav>
+    <Nav >
     
     <div
       className={style.navbar_main}
@@ -51,7 +51,7 @@ const Navbar = () => {
       <div className={style.navbar_main1} style ={{marginRight:"20%"}} >
         <div className={style.navbar_sub2}  >
           <NavLink to ="/">
-            <Link to={"/"} >
+            <RouterLink to={"/"} >
               <h1
               style={{
                 fontSize: "30px",
@@ -62,7 +62,7 @@ const Navbar = () => {
             >
               toggl track
             </h1>
-            </Link>
+            </RouterLink>
           </NavLink>
 
           <Bars onClick={onOpen} />
@@ -168,7 +168,7 @@ const Navbar = () => {
             </AccordionItem>
             </NavLink>
 
-            <NavLink to = "/Pricing">         
+            <NavLink to = "/Prices">         
             <AccordionItem style={{border:"none"}}>
               <h2>
                 <AccordionButton
@@ -180,7 +180,7 @@ const Navbar = () => {
                   }
                   border="#412a4c "
                 >
-                  <Link to={"/price"}>
+                  <RouterLink to={"/Prices"}>
                     <Box
                       flex="1"
                       lineHeight="30px"
@@ -195,7 +195,7 @@ const Navbar = () => {
                     >
                       Pricing
                     </Box>
-                  </Link>
+                  </RouterLink>
                 </AccordionButton>
               </h2>
             </AccordionItem >
@@ -356,16 +356,16 @@ const Navbar = () => {
         </NavBtnLink>
       </div> */} 
 
-          <NavLink to = "/demo">
+          <NavLink to = "/BookDemo">
                       Book a demo  
                       
                       </NavLink>
                       
                       
                       <NavLink to = "/login">
-                      Login
+                       <RouterLink to="/login">Login</RouterLink>  
                       </NavLink>
-            <NavBtnLink to="/signin">
+            <NavBtnLink to="/signup">
                 Try for free
             </NavBtnLink>
       </NavBtn>
