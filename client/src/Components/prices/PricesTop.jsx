@@ -1,19 +1,33 @@
 import React from "react";
 import {
-    Box,
-    Button,
-    Divider,
-    Flex,
-    Stack,
-    Text,
-    Image,
-    Input,
-  } from "@chakra-ui/react";
-  import { BsCheckLg,BsGoogle,BsApple } from "react-icons/bs";
-  
+  Box,
+  Button,
+  Divider,
+  Flex,
+  Stack,
+  Text,
+  Image,
+  Input,
+} from "@chakra-ui/react";
+import { BsCheckLg, BsGoogle, BsApple } from "react-icons/bs";
+import { useState } from "react";
+
 const PricesTop = () => {
-  return <Box>
-       <Text
+  const [annual1, setAnnual1] = useState("$9");
+  const [annual2, setAnnual2] = useState("$18");
+
+  const handleAnnual = () => {
+    setAnnual1("$9");
+    setAnnual2("$18");
+  };
+
+  const handleMonthly = () => {
+    setAnnual1("$10");
+    setAnnual2("$20");
+  };
+  return (
+    <Box>
+      <Text
         fontSize={{ base: "26.4px", md: "30px", lg: "56px" }}
         mt={{ base: 5 }}
         pt={{ base: "24px", md: "27px", lg: "24px" }}
@@ -47,6 +61,7 @@ const PricesTop = () => {
           h="46px"
           borderRadius="30px"
           _hover={{ bg: "#E57CD8" }}
+          onClick={handleAnnual}
         >
           Annual
         </Button>
@@ -57,12 +72,12 @@ const PricesTop = () => {
           h="46px"
           borderRadius="30px"
           _hover={{ bg: "#E57CD8" }}
+          onClick={handleMonthly}
         >
           Monthly
         </Button>
       </Flex>
 
-      
       <Stack
         direction={{ base: "column", md: "column", lg: "row" }}
         w={{ base: "", md: "", lg: "80%" }}
@@ -74,7 +89,7 @@ const PricesTop = () => {
       >
         <Box
           w={{ base: "90%", md: "", lg: "24%" }}
-          m={{ base: "auto" }}
+          m={{ base: "auto", md: "auto" }}
           border="1px solid white"
           bg="#412A4C"
         >
@@ -122,7 +137,7 @@ const PricesTop = () => {
               Free for up to 5 users.
             </Text>
           </Flex>
-          <Divider w={{ base: "", md: "800px", lg: "200px" }} m="auto" mt={5} />
+          <Divider w={{ base: "", md: "700px", lg: "200px" }} m="auto" mt={5} />
           <Box
             fontSize={{ base: "14px", md: "14px", lg: "14px" }}
             p={{ base: "5px", md: "", lg: "5px" }}
@@ -211,9 +226,9 @@ const PricesTop = () => {
         {/* **** */}
         <Box
           w={{ base: "90%", md: "", lg: "24%" }}
+          m={{ base: "auto", md: "auto" }}
           ml={{ base: "300px", md: "", lg: "" }}
           border="1px solid white"
-          //  m={"auto"}
           bg="#412A4C"
         >
           <Text
@@ -254,13 +269,13 @@ const PricesTop = () => {
               fontSize={{ base: "48px", md: "48px", lg: "48px" }}
               color="#E57CD8"
             >
-              $9
+              {annual1}
             </Text>
             <Text fontSize={{ base: "", md: "", lg: "12px" }} mt="25px">
               per user per month
             </Text>
           </Flex>
-          <Divider w={{ base: "", md: "800px", lg: "200px" }} m="auto" mt={5} />
+          <Divider w={{ base: "", md: "700px", lg: "200px" }} m="auto" mt={5} />
           <Box
             fontSize={{ base: "14px", md: "14px", lg: "14px" }}
             p={{ base: "5px", md: "", lg: "5px" }}
@@ -386,7 +401,7 @@ const PricesTop = () => {
               fontSize={{ base: "48px", md: "48px", lg: "48px" }}
               color="#E57CD8"
             >
-              $18
+              {annual2}
             </Text>
             <Text fontSize={{ base: "", md: "", lg: "12px" }} mt="25px">
               per user per month
@@ -394,7 +409,7 @@ const PricesTop = () => {
           </Flex>
           <Box color={"black"}>
             <Divider
-              w={{ base: "", md: "800px", lg: "200px" }}
+              w={{ base: "", md: "700px", lg: "200px" }}
               m="auto"
               mt={5}
             />
@@ -490,15 +505,16 @@ const PricesTop = () => {
           </Button>
         </Box>
         {/* **** */}
+
         <Box
-          w={{ base: "90%", md: "", lg: "24%" }}
+          w={{ base: "90%", md: "90%", lg: "24%" }}
           border="1px solid white"
           bg="#412A4C"
-          m={{ base: "auto" }}
+          m={{ base: "auto", md: "auto" }}
         >
           <Text
             fontSize={{ base: "19.2px", md: "19.2px", lg: "24px" }}
-            w="80%"
+            w="85%"
             m={{
               base: "25px 0px 0px -60px",
               md: "25px 0px 0px -228px",
@@ -539,7 +555,7 @@ const PricesTop = () => {
               Custom pricing. Unlimited users.
             </Text>
           </Flex>
-          <Divider w={{ base: "", md: "800px", lg: "200px" }} m="auto" mt={5} />
+          <Divider w={{ base: "", md: "700px", lg: "200px" }} m="auto" mt={5} />
           <Box
             fontSize={{ base: "14px", md: "14px", lg: "14px" }}
             p={{ base: "", md: "", lg: "5px" }}
@@ -602,8 +618,8 @@ const PricesTop = () => {
           </Button>
         </Box>
       </Stack>
-      
-  </Box>;
+    </Box>
+  );
 };
 
 export default PricesTop;
