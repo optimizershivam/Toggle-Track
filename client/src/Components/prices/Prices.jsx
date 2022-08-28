@@ -18,6 +18,7 @@ const Prices = () => {
     <>
     <Navbar/>
     <Box
+    textAlign={"center"}
     mt="-50px"
     bg="#2c1338"
       color={"#FCE5D8"}

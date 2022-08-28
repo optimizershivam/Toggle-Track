@@ -7,7 +7,7 @@ const BookingConfirm = () => {
   let newDate=date.split(" ")
   let time= localStorage.getItem("time")
   return (
-    <Box bg="#f5f8fa" w={"100%"} p={{ lg: "150px", md: "70px", base: "50px" }} h={{md:"1200px",base:"750px",lg:"750px"}}>
+    <Box bg="#f5f8fa" w={"100%"} p={{ lg: "150px", md: "70px", base: "50px" }} h={{md:"1200px",base:"750px",lg:"750px"}} textAlign={"center"}>
       <Flex w={{lg:"350px",md:"300px",base:"300px"}} pt="50px" m="auto" mt={{lg:"-150px",base:"-30px"}} ml={{base:"-30px",lg:"430px",md:"150px"}}>
         <Stack>
           <Box

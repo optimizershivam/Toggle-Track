@@ -20,7 +20,7 @@ import { ChevronRightIcon, LockIcon, ViewIcon, ViewOffIcon } from '@chakra-ui/ic
 import { useNavigate } from 'react-router-dom';
 import { FaApple, FaGoogle, FaTwitter } from 'react-icons/fa';
 
-export default function signup1() {
+export default function Signup1() {
   const [showPassword, setShowPassword] = useState(false);
   const [email,setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -89,7 +89,7 @@ export default function signup1() {
           <Stack spacing={4} >
             
             <FormControl border='5px' id="email" >
-<FormLabel>Email</FormLabel>
+            <FormLabel>Email</FormLabel>
               <Input width={"100%"} type="email" placeholder="email" value={email} onChange={handleEmailChange} />
             </FormControl>
             <FormControl id="password" >
