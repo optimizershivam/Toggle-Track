@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Button,
@@ -11,10 +11,42 @@ import {
 } from "@chakra-ui/react";
 import { BsCheckLg, BsGoogle, BsApple } from "react-icons/bs";
 import { IoMdArrowDropright } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 
 const PriceSignup = () => {
+  const [email,setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  
+  const navigate =useNavigate()
+
+  const handleSubmit= async()=>{
+
+    const payload = {
+      email,
+      password
+  }
+   await fetch("https://damp-reef-46945.herokuapp.com/auth/register"
+   , {
+      method : "POST",
+      body : JSON.stringify(payload),
+      headers: {
+          'Content-Type': 'application/json'
+        },
+  })
+  if(email.length!=0 && password.length!=0)
+  {
+      alert("register successfully")
+      navigate("/login")
+  }
+  if(email.length==0 && password.length==0)
+  {
+      alert("please sigup")
+      
+  }
+  }
+
   return (
-    <Box mt="80px"  p={{ lg: "0px" }}>
+    <Box mt="80px"  p={{ lg: "0px" }} textAlign={"center"}>
 
       <Box
         m="auto"
@@ -47,6 +79,10 @@ const PriceSignup = () => {
             borderColor="black"
             placeholder="Email"
             m={{ base: "10 0 10 0px" }}
+            color="black"
+            type={"email"}
+            value={email}
+            onChange={(e)=>setEmail(e.target.value)}
           />
 
           <Input
@@ -54,6 +90,10 @@ const PriceSignup = () => {
             borderColor="black"
             m={{ lg: "0 0 0 25px" ,base:"20px 0px 0px 0px"}}
             placeholder="A strong password "
+            color="black"
+            type={"password"}
+            value={password}
+            onChange={(e)=>setPassword(e.target.value)}
           />
 
 
@@ -63,6 +103,7 @@ const PriceSignup = () => {
             bg="#e57cd8"
             color="white"
             m={{ lg: "0 0 0 25px",base:"20px 0px 0px 0px" }}
+            onClick={handleSubmit}
           >
             Sign up with email
           </Button>

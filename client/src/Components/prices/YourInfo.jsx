@@ -46,7 +46,7 @@ const handleUserInfo=()=>{
 }
 
   return (
-    <Box bg="#f5f8fa" w="100%" h={{md:"1200px"}}>
+    <Box bg="#f5f8fa" w="100%" h={{md:"1200px"}} textAlign={"center"}>
       <Flex w="300px" pt="50px" m="auto">
         <Stack>
           <Box

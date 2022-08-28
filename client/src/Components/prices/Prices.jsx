@@ -23,6 +23,7 @@ const Prices = () => {
       color={"#FCE5D8"}
       fontFamily={"sans-serif"}
       w={{ base: "100%", md: "100%", lg: "100%" }}
+      textAlign={"center"}
     >
       <PricesTop />
 

@@ -12,7 +12,7 @@ import {
   import { IoMdArrowDropright } from "react-icons/io";
   
 const Trial = () => {
-  return <Box>
+  return <Box textAlign={"center"}>
 
 <Box mt={50}>
         <Box w={"50%"} m="auto">

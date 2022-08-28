@@ -16,7 +16,7 @@ import { Link as RouterLink, useNavigate  } from "react-router-dom";
 const BookDemo = () => {
   const navigate=useNavigate()
   return (
-    <Box bg="#2c1338">
+    <Box bg="#2c1338" textAlign={"center"}>
       <Stack
         w={"90%"}
         margin="auto"
