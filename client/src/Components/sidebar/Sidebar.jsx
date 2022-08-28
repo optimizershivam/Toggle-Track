@@ -1,4 +1,4 @@
-import React,{ReactNode} from 'react'
+import React,{ReactNode, useEffect, useState} from 'react'
 import {
   
   Box,
@@ -14,11 +14,13 @@ import {
   BoxProps,
   FlexProps,
   Image,
+  Button
   
 } from '@chakra-ui/react';
 import {
  
   FiFolderMinus,
+  FiLogOut,
   FiUser,
   FiWatch
   
@@ -26,10 +28,11 @@ import {
 import { IconType } from 'react-icons';
 import { ReactText } from 'react';
 import { TbReportSearch } from "react-icons/tb";
-import { FaUserFriends,FaTag,FaQuestion } from "react-icons/fa";
+import { FaUserFriends,FaTag,FaQuestion, FaUserTie } from "react-icons/fa";
 import { BellIcon } from '@chakra-ui/icons'
 import {FaStopwatch  } from "react-icons/fa";
-import{Link as RouterLink} from "react-router-dom";
+import{Link as RouterLink,useNavigate} from "react-router-dom";
+import axios from 'axios';
 // interface LinkItemProps {
 //   name: string;
 //   icon: IconType;
@@ -50,6 +53,7 @@ const Anylyze=[
 // ]
 
 export default function SimpleSidebar({ children }) {
+const email=localStorage.getItem("email")
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     // <Box minH="100vh" bg={useColorModeValue('')}>
@@ -79,6 +83,14 @@ export default function SimpleSidebar({ children }) {
 // }
 
 const SidebarContent = ({ onClose, ...rest }) => {
+  const email=localStorage.getItem("email")
+   const navigate=useNavigate()
+  const handleLogout=()=>{
+    const token=localStorage.removeItem("token")
+    const email=localStorage.removeItem("email")
+     navigate("/")
+
+  }
   return (
     <Box
       bg={useColorModeValue('#2c1338')}
@@ -285,6 +297,15 @@ const SidebarContent = ({ onClose, ...rest }) => {
       </Flex>
      </>
       </Box>
+      <Box  h="60px"  w="90%" margin="auto" mt="25px" paddingTop="15px"   border="2px solid grey">
+        <Flex>
+      <FaUserTie color="white"  fontSize="25px"/>
+        <Text color="white" >{email}</Text>
+        </Flex>
+       
+
+      </Box>
+      <Button marginTop="15px" color="Red" onClick={handleLogout}><FiLogOut/>Logout</Button>
     
     </Box>
   );

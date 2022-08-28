@@ -1,6 +1,6 @@
 import {  Center, Flex, Text ,Box,Input } from '@chakra-ui/react';
 import axios from "axios";
-import React, {  useRef, useState } from 'react'
+import React, {  useEffect, useRef, useState } from 'react'
 import {
   BsFolderFill,
   BsFillTagFill,
@@ -42,16 +42,17 @@ const TopNav = () => {
       
      };
 
-    const stop = () => {
-      postdata({ id: Date.now(), project: text ,stopat:msToTime(watch)});
+    const stop = async () => {
+       postdata({ id: Date.now(), project: text ,stopat:msToTime(watch)})
       getdata()
       clearInterval(id.current);
       id.current = null;
       setSend()
-      
+      setWatch(0)
       setText("")
     };
-
+ 
+   
 
     let project=true
   let [timer ,setTimer ]= useState(false)

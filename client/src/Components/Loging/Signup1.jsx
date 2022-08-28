@@ -19,6 +19,8 @@ import { useState } from 'react';
 import { ChevronRightIcon, LockIcon, ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import { useNavigate } from 'react-router-dom';
 import { FaApple, FaGoogle, FaTwitter } from 'react-icons/fa';
+import Navbar from '../NavComponents/Navbar';
+import Footer from '../Homepage/Footer';
 
 export default function signup1() {
   const [showPassword, setShowPassword] = useState(false);
@@ -61,8 +63,9 @@ export default function signup1() {
 
   return (
 
-
-
+  
+     <>
+      {/* <Navbar/> */}
 
 
     <Box bg={"rgb(44, 19, 56)"} color={"white"}  margin={"auto"} >
@@ -140,8 +143,10 @@ export default function signup1() {
         </Box>
       </Stack>
      
-   
+     
    </Box>
+   {/* <Footer/> */}
+   </>
    
   );
 }

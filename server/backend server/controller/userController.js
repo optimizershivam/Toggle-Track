@@ -5,7 +5,7 @@ const UserModel = require("../models/User.model");
 const getUserInfo = async (req, res) => {
   try {
     const find_user = await UserModel.findById(req.user.id).select(
-      "name email password"
+      "email"
     );
     return res.send(find_user);
   } catch (err) {

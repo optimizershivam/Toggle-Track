@@ -9,9 +9,10 @@ import {
   AccordionPanel,
   AccordionIcon,
   Box,
+  Button
 } from "@chakra-ui/react";
 import Career from "./Career";
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, useNavigate } from "react-router-dom";
 
 //importing Pratik res
 import { Nav,NavLink,Bars,NavMenu,NavBtn,NavBtnLink } from '../NavComponents/responsive Nav/navElements'
@@ -30,8 +31,18 @@ import {ChevronRightIcon } from '@chakra-ui/icons'
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
-  // const navigate=useNavigate()
+  // const[login,setLogin]=useState()
+  const navigate=useNavigate()
   // console.log("nav:", nav);
+  var token=localStorage.getItem("token")
+ console.log(token)
+  const handleLogout=()=>{
+    localStorage.removeItem("token")
+    
+
+    navigate("/")
+    }
+ 
 
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [placement, setPlacement] = React.useState('right')
@@ -115,7 +126,7 @@ const Navbar = () => {
             }
             className={style.toogle1} >
 
-            <NavLink to = "/produts">
+            {/* <NavLink to = "/produts"> */}
           
             <AccordionItem style={{border:"none"}}>
               <h2 >
@@ -166,7 +177,7 @@ const Navbar = () => {
                 </div>
               </AccordionPanel>
             </AccordionItem>
-            </NavLink>
+            {/* </NavLink> */}
 
             <NavLink to = "/Prices">         
             <AccordionItem style={{border:"none"}}>
@@ -201,7 +212,7 @@ const Navbar = () => {
             </AccordionItem >
             </NavLink>
             
-            <NavLink to = "/track">
+            {/* <NavLink to = "/track"> */}
             <AccordionItem style={{border:"none"}}>
               <h2>
                 <AccordionButton
@@ -247,10 +258,10 @@ const Navbar = () => {
                 </div>
               </AccordionPanel>
             </AccordionItem>
-            </NavLink>
+            {/* </NavLink> */}
 
             <div className={style.line}></div>
-            <NavLink to = "/career">
+            {/* <NavLink to = "/career"> */}
             <AccordionItem style={{border:"none"}}>
               <h2>
                 <AccordionButton
@@ -298,7 +309,7 @@ const Navbar = () => {
                 </div>
               </AccordionPanel>
             </AccordionItem>
-            </NavLink>
+            {/* </NavLink> */}
 
 
             <div className={style.line}></div>
@@ -361,10 +372,19 @@ const Navbar = () => {
                       
                       </NavLink>
                       
-                      
-                      <NavLink to = "/login">
-                       <RouterLink to="/login">Login</RouterLink>  
+                      {
+                      token?
+                      <NavLink to="/">
+                       <Button color="black" onClick={handleLogout}>Logout</Button>  
                       </NavLink>
+                      
+                        :
+                        <NavLink to = "/login">
+                       <RouterLink to="/login"><Button color="black">Login</Button></RouterLink>  
+                      </NavLink>
+                      
+                      
+                      }
             <NavBtnLink to="/signup">
                 Try for free
             </NavBtnLink>

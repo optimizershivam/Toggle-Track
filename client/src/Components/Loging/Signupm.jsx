@@ -1,12 +1,15 @@
 import { Box, Flex, Heading,Text,Stack } from "@chakra-ui/react";
 import React from "react";
+import Footer from "../Homepage/Footer";
+import Navbar from "../NavComponents/Navbar";
 
 import Signup1 from "./Signup1";
 
 
 const Signupm = () => {
   return (
-    
+    <>
+    <Navbar/>
     <Box bg={"#2C1338"} width={"100%"} >
        <Box>  
             <img  style={{width:"15%"}} src="https://i.postimg.cc/1RDLznkj/tt.png" alt="" /></Box>
@@ -36,6 +39,8 @@ Already have an account? Log in here.
    
       </Stack>
       </Box>
+      <Footer/>
+      </>
   );
 };
 

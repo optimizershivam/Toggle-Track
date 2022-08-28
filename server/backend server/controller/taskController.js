@@ -14,9 +14,11 @@ const createTask = async (req, res) => {
     console.log(err);
   }
 };
+
 const getAllTasks = async (req, res) => {
   try {
-    const allTasks = await TaskModel.find();
+    const user=req.user.id
+    const allTasks = await TaskModel.find({user:user});
     // if (!allTasks) return res.send({message:"No Task found"});
     return res.send(allTasks);
   } catch (err) {
@@ -24,6 +26,8 @@ const getAllTasks = async (req, res) => {
     res.send("sth went wrong");
   }
 };
+
+
 
 const editTasks = async (req,res) => {
     try{
