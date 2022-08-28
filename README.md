@@ -59,7 +59,7 @@
 # <h2>Login In / Login Page : </h2>
 ![LogIn Page](https://i.postimg.cc/hv1sy04W/errorlogin.png)
 # <h2>Pricing Page : </h2>
-![Pricing Page](https://files.slack.com/files-pri/T03UHPHKDFY-F04049DK3L4/screenshot__3219_.png)
+![Pricing Page](https://i.postimg.cc/Jn5KPWQ4/pppp.png)
 # <h2>Timer Page : </h2>
 ![Timer Page](https://i.postimg.cc/4xq610vH/timer.png)
 # <h2>Project Page : </h2>
