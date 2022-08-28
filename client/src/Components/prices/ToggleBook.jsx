@@ -16,7 +16,7 @@ const ToggleBook = () => {
     }
   }
   return (
-    <Box bg="#f5f8fa" w="100%">
+    <Box bg="#f5f8fa" w="100%" textAlign={"center"}>
       <Image
         w={{ lg: "200px",md:"200px",base:"100px"}}
         h={{ lg: "125px" }}

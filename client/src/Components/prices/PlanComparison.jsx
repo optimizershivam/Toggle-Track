@@ -15,7 +15,7 @@ import { BsCheckLg } from "react-icons/bs";
 
 const PlanComparison = () => {
   return (
-    <Box w={{ lg: "80%" }} m="auto">
+    <Box w={{ lg: "80%" }} m="auto" textAlign={"center"}>
       <Text
         fontSize={{ lg: "44.99px", md: "35px", base: "25px" }}
         mt={{ lg: "70px", base: "50px", md: "70px" }}

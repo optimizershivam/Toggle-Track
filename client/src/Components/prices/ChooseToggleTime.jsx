@@ -15,7 +15,7 @@ const ChooseToggleTime = () => {
   console.log(value)
   console.log(startDate);
   return (
-    <Box bg="#f5f8fa" w="100%" h={"1700px"}>
+    <Box bg="#f5f8fa" w="100%" h={"1700px"} textAlign={"center"}>
 
       <Flex w="300px" pt="50px" m="auto">
         <Stack>

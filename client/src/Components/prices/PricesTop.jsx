@@ -25,7 +25,7 @@ const navigate =useNavigate()
     setAnnual2("$20");
   };
   return (
-    <Box>
+    <Box textAlign={"center"}>
       <Text
         fontSize={{ base: "26.4px", md: "30px", lg: "56px" }}
         mt={{ base: 5 }}
