@@ -9,7 +9,7 @@ export const postdata = (send) => {
         "authorization":token
       }
     })
-    .then((res) => console.log(" data done"));
+    .then((res) => console.log(" post done"));
 };
 
 
@@ -37,6 +37,6 @@ export function msToTime(duration) {
       headers:{
         "authorization":token
       }})
-    .then((res) => console.log("done"));
+    .then((res) => console.log(" delte done"));
 };
 // /timer/delete

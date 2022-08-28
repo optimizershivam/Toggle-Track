@@ -4,9 +4,9 @@ import {FaBars} from "react-icons/fa";
 
 
 export const Nav = styled.nav`
-postion:sticky;
+// postion:sticky;
 height : 80px;
-// z-index : 10;
+z-index : 10;
 `
 
 export const NavLink = styled(Link)`

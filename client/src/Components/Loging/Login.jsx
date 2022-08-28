@@ -56,9 +56,11 @@ export default function Login() {
         .then((res) => {
           console.log(res)
             localStorage.setItem("token", res.token)
+            localStorage.setItem("email",payload.email)
             navigate("/timer")
           
         })
+        
         
         .catch((err) => console.log(err))
     }
