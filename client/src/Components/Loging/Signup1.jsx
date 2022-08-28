@@ -21,11 +21,14 @@ import { useNavigate } from 'react-router-dom';
 import { FaApple, FaGoogle, FaTwitter } from 'react-icons/fa';
 import Navbar from '../NavComponents/Navbar';
 import Footer from '../Homepage/Footer';
+import { useToast } from '@chakra-ui/react'
 
 export default function Signup1() {
   const [showPassword, setShowPassword] = useState(false);
   const [email,setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [isLoading,setIsloading] = useState(false)
+  const toast = useToast()
   
  const nav =useNavigate()
   const handleEmailChange = (e) => {
@@ -48,16 +51,34 @@ export default function Signup1() {
               'Content-Type': 'application/json'
             },
       })
-      if(email.length!=0 && password.length!=0)
-      {
-          alert("register successfully")
-         nav("/login")
-      }
-      if(email.length==0 && password.length==0)
-      {
-          alert("please sigup")
-          
-      }
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res)
+         if(res.message === "required fields are email,password")
+         {
+          toast({
+            title: 'Please fill the details.',
+            description: "Input Feilds are required .",
+            status: 'error',
+            duration: 1500,
+            isClosable: true,
+            position:"top"
+          })
+         }
+        else if (res.message === "Register Successfull")
+        {
+          toast({
+            title: 'Account created.',
+            description: "We've created your account for you. Please Login",
+            status: 'success',
+            duration: 2500,
+            isClosable: true,
+            position:"top"
+          })
+          setTimeout(()=>{ nav("/login",{replace:true})},1000)
+        }
+      })
+      
      
   }
 
@@ -115,7 +136,7 @@ export default function Signup1() {
           
             <HStack spacing={4} pt={2}>
            
-              <Button onClick={handleSubmit}
+              <Button 
                 loadingText="Submitting"
                 borderRadius={"16px"}
                 size="lg"
@@ -126,7 +147,19 @@ export default function Signup1() {
                 
                 _hover={{
                   bg: 'rgb(86, 66, 96)',
-                }}>
+                }}
+                onClick={
+                  ()=>{
+                    setIsloading(true)
+                    setTimeout(() => {
+                        setIsloading(false)
+                         handleSubmit()
+                    },1000)
+                    
+                  }
+                }
+                isLoading={isLoading}
+                >
                 Sign up
               </Button>
             

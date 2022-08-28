@@ -15,6 +15,7 @@ import {
  Link,
   Center,
   VStack,
+  useToast,
 } from '@chakra-ui/react';
 import { BsApple, BsGoogle } from "react-icons/bs";
 import { useState } from 'react';
@@ -29,6 +30,8 @@ import Navbar from '../NavComponents/Navbar';
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
  const navigate=useNavigate()
+ const [isLoading,setIsloading] = useState(false)
+ const toast = useToast()
   const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
@@ -55,9 +58,58 @@ export default function Login() {
         .then((res) => res.json())
         .then((res) => {
           console.log(res)
-            localStorage.setItem("token", res.token)
-            localStorage.setItem("email",payload.email)
-            navigate("/timer")
+           
+            if(res.message === "required fields are email,password")
+         {
+          toast({
+            title: 'Please fill the details.',
+            description: "Input Feilds are required .",
+            status: 'error',
+            duration: 1500,
+            isClosable: true,
+            position:"top"
+          })
+         }
+         else if (res.message === "Plz enter registered details")
+        {
+          
+            toast({
+              title: 'Login Failed.',
+              description: "Please enter correct Details.",
+              status: 'error',
+              duration: 3000,
+              isClosable: true,
+              position:"top"
+            })
+          
+        }
+        else if (res.message === "Wrong email or Password")
+        {
+          toast({
+            title: 'Login Failed.',
+            description: "Wrong email or Password.",
+            status: 'error',
+            duration: 3000,
+            isClosable: true,
+            position:"top"
+          })
+        }
+        else if(res.message === "Login Success")
+        {
+          toast({
+            title: 'Logged in Successfull.',
+            description: "Welcome",
+            status: 'success',
+            duration: 2000,
+            isClosable: true,
+            position:"top"
+          })
+          localStorage.setItem("token", res.token)
+          localStorage.setItem("email",payload.email)
+          navigate("/timer")
+        }
+        
+           
           
         })
         
@@ -135,8 +187,8 @@ export default function Login() {
          
            <HStack spacing={4} pt={2}>
             
-             <Button onClick={handleSubmit}
-               loadingText="Submitting"
+             <Button 
+               loadingText="Logging in"
                borderRadius={"16px"}
                size="lg"
               width={"100%"}
@@ -146,7 +198,19 @@ export default function Login() {
               
                _hover={{
                  bg: 'rgb(86, 66, 96)',
-               }}>
+               }}
+               onClick={
+                ()=>{
+                  setIsloading(true)
+                  setTimeout(() => {
+                      setIsloading(false)
+                       handleSubmit()
+                  },1000)
+                  
+                }
+              }
+              isLoading={isLoading}
+               >
                Login
              </Button>
            
