@@ -15,8 +15,19 @@
     <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="css3"/>   
     <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" alt="JavaScript" />
     <img src ="https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7" alt="Bootstrap"/>
+    
+
 </p>
 
+## ⚙️ **BACKEND DEV**
+
+[![](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white "Nodejs")]
+[![Express js](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge "Express js")]
+[![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase "Firebase")]
+
+## 📅 **DATABASES**
+
+[![Mongodb](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white "Mongodb")]
 
 <h3 align="center"><a href="https://toggletrack.vercel.app/"><strong>Want to see live preview »</strong></a></h3>
 
@@ -26,7 +37,7 @@
   </p>
   
 
-#  <h1><a href="https://toggletrack.vercel.app/">Hubspot </a> Website Clone (Learning Purpose)</h1>
+#  <h1><a href="https://toggletrack.vercel.app/">Toggl Track </a> Website Clone (Learning Purpose)</h1>
 
 # <h2>About toggl track Website : </h2>
 
@@ -48,7 +59,7 @@
 # <h2>Login In / Login Page : </h2>
 ![LogIn Page](https://i.postimg.cc/hv1sy04W/errorlogin.png)
 # <h2>Pricing Page : </h2>
-![Pricing Page]()
+![Pricing Page](https://i.postimg.cc/Jn5KPWQ4/pppp.png)
 # <h2>Timer Page : </h2>
 ![Timer Page](https://i.postimg.cc/4xq610vH/timer.png)
 # <h2>Project Page : </h2>
@@ -66,7 +77,7 @@ This project was built using React v 17.0.2, Redux v 4.1.2, Chakra UI, CSS and R
 ### Setup
 
 
-The project repository can be found in [GitHub link](https://github.com/optimizershivam/Hubspot-clone) or just clone the project using this command. 
+The project repository can be found in [GitHub link]https://github.com/optimizershivam/elastic-punishment-3534 or just clone the project using this command. 
 
 
 ```
