@@ -1,3 +1,6 @@
+// Why does this file have a jsx extension when there is no jsx. This prevents the IDE
+// from properly highlighting the syntax and showing any suggestions.
+
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import {FaBars} from "react-icons/fa";

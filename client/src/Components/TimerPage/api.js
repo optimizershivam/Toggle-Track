@@ -1,3 +1,6 @@
+// Don't put utility javascript code along with the components. Have a separate
+// utils folder for that.
+
 import axios from 'axios'
 export const postdata = (send) => {
   console.log(send)

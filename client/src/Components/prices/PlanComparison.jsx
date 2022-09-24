@@ -109,6 +109,8 @@ const PlanComparison = () => {
                 <Td fontSize={{ lg: "20px" }} p={{ lg: "20px" }}>
                   Time Tracking
                 </Td>
+                {/* What is this for? I'm guessing this is for adding some column space.
+                If so, it is not the right way to do so. Please avoid such hacks. */}
                 <Td></Td>
                 <Td></Td>
                 <Td></Td>

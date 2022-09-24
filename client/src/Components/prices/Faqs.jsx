@@ -52,6 +52,10 @@ const Faqs = () => {
                   <AccordionIcon />
                 </AccordionButton>
               </h2>
+              {/* Such strings should be declared in one place in a separate class or js file.
+              For example, see - https://github.com/mozilla/addons-frontend/blob/master/src/amo/constants.js
+              This makes managing static text easier. It also becomes easier to add support l10n and i18n
+              so the app can render text for different languages (like rtl languages).               */}
               <AccordionPanel pb={4} fontSize={{ lg: "15.36px" ,base:"14px",md:"15" }}>
                 You will be charged a monthly fee for each member of your team.
                 For paid plans, this fee applies even if you have under 5 active

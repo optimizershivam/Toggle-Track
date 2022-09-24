@@ -1,3 +1,6 @@
+/* Move the jsx and css files for the same component into its own folder
+like done for some other components. Follow one convention. */
+
 /* second div style start from here */
 .fixtop{
     width: 100%;

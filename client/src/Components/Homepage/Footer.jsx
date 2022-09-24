@@ -61,6 +61,7 @@ export default function Footer() {
         <Box>  
             <img  style={{width:"15%"}} src="https://i.postimg.cc/1RDLznkj/tt.png" alt="" /></Box>
         <SimpleGrid columns={{ base: 1, sm: 2, md:3,lg:6 }} spacing={8} >
+          {/* The repetition of these tag blocks below could be avoided and replaced with loops. */}
           <Stack align={'flex-start'} >
             <ListHeader>TOGGL GLOBAL</ListHeader>
             <Link  href={'#'} fontWeight={"normal"} textDecor={"none"}>Blog</Link>
@@ -112,7 +113,8 @@ export default function Footer() {
         </SimpleGrid>
       </Container>
       <Stack direction={'row'} marginBottom={"30px"} spacing={6} justifyContent={"center"}>
-            <SocialButton label={'Twitter'} href={'#'}>
+          {/* The repetition of tags below could be avoided and replaced with a loop. */}
+          <SocialButton label={'Twitter'} href={'#'}>
               <FaTwitter />
             </SocialButton>
             <SocialButton label={'facebook'} href={'#'}>

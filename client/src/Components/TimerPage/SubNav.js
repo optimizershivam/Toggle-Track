@@ -15,6 +15,11 @@ import {
 import { format } from "date-fns";
 import Rangetimer from "./Rangetimer";
 
+// A common issue that all the components in the codebase suffer from is that the styling is defined inline
+// instead of separating that in a dedicated scss or css file. Inline css is usually okay when the component
+// is tiny and the css rules are relatively self contained. For such a big component, inline css makes this
+// component practically non-reusable, degrades code readbility and clutters the layout and logic contained
+// in the component with its styling rules which have little role to play in what the component is about.
 const SubNav = () => {
   const[open,setOpen]= useState(false)
   const [date, setDate] = useState([

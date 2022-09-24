@@ -1,5 +1,7 @@
 import React from 'react'
 import { Routes,Route } from 'react-router-dom'
+// Remove all unused imports from all the files please. Importing something adds an overhead
+// while loading the application / component. Avoid this.
 import Footer from '../Components/Homepage/Footer'
 import Homepage from '../Components/Homepage/Homepage'
 import Navbar from "../Components/NavComponents/Navbar"
@@ -30,6 +32,7 @@ const Navroutes = () => {
          <Route path="/YourInfo" element={<YourInfo/>} />
          <Route path="/ToggleBook" element={<ToggleBook/>} />
          <Route path="/Prices" element={<Prices/>} />
+         {/* Have consistency in naming your routes. Follow the same convention. */}
          <Route path="/login" element={<Login/>} />
          <Route path='/signup' element={<Signupm/>}/>
          {/* <Route path="/timers" element={<Sidebarroutes/>} /> */}

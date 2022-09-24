@@ -34,6 +34,7 @@ const Apps = () => {
         pb="50px"
       >
         <Box w={{ lg: "25%",md:"60%",base:"80%" }} >
+          {/* Passing styling properties as props is a very strange pattern. Never seen it in well written codebases. */}
           <Image m={{md:"0 0 0 80px",base:"0 0 0 -120px",lg:"70px 0 0 -10px"}} src="https://public-assets.toggl.com/b/static/2038847e62390356691df99de87fece9/368f9/icon-mobile.avif" />
           <Box ml={{ lg: "-60px",md:"-10px",base:"-280px" }} w={{ lg: "70%" }} mt="30px">
             <Text fontWeight={"bold"}>MOBILE APPS</Text>
