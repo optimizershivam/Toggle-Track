@@ -1,3 +1,5 @@
+// Remove all of these commented lines.
+
 // import { EmailIcon } from '@chakra-ui/icons';
 // import {
 //   Flex,

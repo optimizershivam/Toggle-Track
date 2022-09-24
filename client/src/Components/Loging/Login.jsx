@@ -58,7 +58,9 @@ export default function Login() {
         .then((res) => res.json())
         .then((res) => {
           console.log(res)
-           
+          //  Never string match the error message. Later if the backend changes the error text
+          //  this check will fail and the code will behave unexpectedly. Instead the status code
+          //  or some status enum should be checked for here.
             if(res.message === "required fields are email,password")
          {
           toast({
@@ -113,15 +115,18 @@ export default function Login() {
           
         })
         
-        
+        // This is poor error handling. Logging the error isn't enough.
         .catch((err) => console.log(err))
     }
     
   return (
 
 <>
+
+{/* Please format code. It is all over the place. */}
 <Navbar/>
 <Box w={"full"}>
+  {/* Such urls should be put in some constants file */}
   <Box backgroundImage="url('https://public-assets.toggl.com/b/static/a848ad9070fcf959a459fa1e878d2abb/c0583/hero-laptops.jpg')"
   backgroundPosition="center"
   backgroundRepeat="no-repeat" bgSize="full"  h={'400px'} margin="auto"  zIndex={"-1"}>

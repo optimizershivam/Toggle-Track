@@ -1,3 +1,9 @@
+// Why is this file called passport? Because it uses some dependency called passport?
+// This is so wrong. Files should be named after the class or functionality they expose.
+// That gives the reader some context of what to expect before even opening the file.
+// Random names don't help at all. Also, using the same name as another package adds to
+// even more confusion.
+
 const passport =require("passport")
 const GoogleStrategy = require('passport-google-oauth2').Strategy;
 require("dotenv").config()
@@ -35,6 +41,7 @@ passport.deserializeUser(function(user, done) {
         done(null, user);
 });
 
+// Add comments on what this block is about and what it does.
 passport.use(new GoogleStrategy({
         clientID:process.env.CLIENT_ID,
         clientSecret:process.env.CLIENT_SECRET,

@@ -1,4 +1,8 @@
 var jwt = require("jsonwebtoken");
+
+// Leave a blank line between the require statements and the actual code.
+// Also remove all commented log statements. It is better to keep your
+// code clean of dead or commented statements.
 const authentication = (req, res, next) => {
   // const token = req.headers.authorization;
   const token = req.cookies.access_token ;

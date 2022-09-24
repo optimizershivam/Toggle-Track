@@ -1,3 +1,53 @@
+// This file is just unreadable.
+// 1. Lots of unused imports
+// 2. Lots of commented code
+// 3. Absolutely 0 comments on what purpose the sidebar serves
+// 4. Tons of CSS mixed along with the component definition and contents
+//
+// Please write smaller and more well defined components which have a specific purpose.
+// Each component should have a few comments about what it does, a sample usage example if possible, etc.
+// A good component has a well defined purpose and usually it should be configurable so it can be used elsewhere too.
+// From the code below, it looks like Sidebar is a "container" which is a component that is composed of multiple smaller
+// independent components. I'm making this distinction because that helps to think about the UI in a different, more
+// compartmentalised way that makes organising, writing, reusing and maintaining code easier.
+//
+// Also, the current way of combining the entire JSX in a single return statement makes understanding the sub-components
+// extremely difficult. A better way to use JSX is to define different variables for different logical elements within
+// the component. For example (might not be strictly syntactically correct) -
+//
+// const Header = (props) => (
+//   <h1 className="heading">
+//     props.message
+//   </h1>
+// );
+//
+// const Body = (props) => (
+//   <div className="content">
+//     props.text
+//   </div>
+// );
+//
+// // ... Similarly Section and Footer are defined.
+//
+// const Page = (props) => {
+//   return (
+//     <div>
+//       <Header message=props.heading />
+//       <Body text=props.content />
+//         <Section>
+//           <OtherComponent />
+//           <AnotherComponent />
+//         </Section>
+//       <Footer />
+//     </div>
+//   );
+// }
+//
+// The example above makes reading and understanding what the component is doing is much easier.
+//
+// A good example of a cleanly written big component is -
+// https://github.com/mozilla/addons-frontend/tree/master/src/amo/components/AddonsCard.
+// It also separates its styling from the component and encapsulates all the points described above.
 import React,{ReactNode, useEffect, useState} from 'react'
 import {
   

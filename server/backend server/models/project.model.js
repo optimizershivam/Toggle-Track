@@ -1,3 +1,8 @@
+// Leave blank lines where necessary. This looks hotch potchy.
+// The naming convention for the model files is also not
+// consistent. Make sure to follow one convention (which should
+// always be the language standard). Read style guides for the
+// right naming practices.
 
 const mongoose=require("mongoose")
 const { Schema } = mongoose;

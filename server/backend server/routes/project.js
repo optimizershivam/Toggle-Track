@@ -3,6 +3,10 @@ const express=require("express")
 const ProjectController= express.Router()
 const ProjectModel=require("../models/project.model")
 
+// Follow one convention. Define all the API functions in the controllers
+// folder and just import that here and define the route using that function.
+// Don't define the API function in line with the route. Avoid mixing such
+// things.
 
 ProjectController.post("/create",async(req,res)=>{
 const{id,name,client}=req.body

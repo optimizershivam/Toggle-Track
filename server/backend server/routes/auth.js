@@ -14,6 +14,7 @@ router.get("/hello", (req, res) => {
 router.post("/register", register);
 router.post("/login", login);
 router.get("/logout", logout);
+// Either use snake case or camel case. This API path looks off.
 router.get("/isloggedin", isLoggedIn);
 
 module.exports = router;

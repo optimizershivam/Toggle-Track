@@ -149,6 +149,12 @@ const navigate =useNavigate()
             }}
             textAlign={"left"}
           >
+            {/* The following block could've been written in a much neater fashion by having a
+            containerwhich assembles each Flex > Box > BsCheckLg unit by looping over a prop
+            containingdata elements in an array. This is precisely a perfect example of anti-patterns
+            withReact components. Components are written for being reusable and helping maintain code
+            better. What is the point of using react and its component framework if y'all hardcode
+            the entire page like this? Same applies below as well */}
             <Flex gap={5} mt="9px">
               <Box color={"#E57CD8"} fontSize="20px">
                 <BsCheckLg />
